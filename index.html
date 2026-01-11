@@ -279,9 +279,6 @@
             <a href="#productos" itemprop="url" class="px-4 py-1.5 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 tracking-wide hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               <span itemprop="name">Productos</span>
             </a>
-            <a href="#marcas" itemprop="url" class="px-4 py-1.5 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 tracking-wide hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-              <span itemprop="name">Marcas</span>
-            </a>
             <a href="#beneficios" itemprop="url" class="px-4 py-1.5 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 tracking-wide hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               <span itemprop="name">Diferencial</span>
             </a>
@@ -320,9 +317,6 @@
       <div id="mobile-menu" class="hidden md:hidden pointer-events-auto absolute top-24 left-4 right-4 bg-brand-dark border border-white/10 rounded-3xl shadow-2xl py-6 px-6 flex-col gap-4 ring-1 ring-white/5 glass-card">
         <a href="#productos" class="text-sm font-medium text-white/80 py-3 block border-b border-white/5 hover:text-white transition-colors">
           Productos
-        </a>
-        <a href="#marcas" class="text-sm font-medium text-white/80 py-3 block border-b border-white/5 hover:text-white transition-colors">
-          Marcas
         </a>
         <a href="#beneficios" class="text-sm font-medium text-white/80 py-3 block border-b border-white/5 hover:text-white transition-colors">
           Diferencial
@@ -483,7 +477,10 @@
                 </span>
               </div>
 
-              <h3 class="text-3xl text-white font-display mb-4">Salina – Línea Seca Premium</h3>
+              <div class="flex flex-col items-start mb-6">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b175b940-f92b-44a5-95bd-4190aa37dbe5_1600w.png" alt="Salina - Marca Premium de Sal Industrial" class="h-12 w-auto object-contain mb-3 drop-shadow-lg" width="160" height="48">
+                <span class="text-slate-300 text-sm font-medium tracking-wide">Línea Seca Premium</span>
+              </div>
               <p class="text-slate-200 max-w-md mb-8" itemprop="description">
                 Sal de alta pureza con <strong>doble secado industrial</strong>. Disponible sin yodo para 
                 procesos químicos, textil, curtiembre y tratamiento de aguas. Control total de granulometría 
@@ -550,9 +547,10 @@
                 </span>
               </div>
 
-              <h3 class="text-3xl text-white font-display mb-4">
-                Costeñita – Línea Húmeda Estándar
-              </h3>
+              <div class="flex flex-col items-start mb-6">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/89fb20f9-e773-4dbb-8869-23db60811052_1600w.png" alt="Costeñita - Sal de Mesa para el Hogar" class="h-12 w-auto object-contain mb-3 drop-shadow-lg" width="160" height="48">
+                <span class="text-slate-300 text-sm font-medium tracking-wide">Línea Húmeda Estándar</span>
+              </div>
               <p class="text-slate-200 mb-8 max-w-md" itemprop="description">
                 Sal de mesa yodada y fluorada para consumo humano. Proceso de molido y secado único 
                 que preserva minerales naturales. Presentaciones de 1kg y 500g para distribución 
@@ -599,80 +597,6 @@
               </a>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="marcas" class="py-24 bg-brand-teal relative overflow-hidden">
-      <!-- Decorative background -->
-      <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/2 right-0 w-64 h-64 bg-brand-dark/20 rounded-full blur-3xl"></div>
-      </div>
-
-      <div class="lg:px-8 max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
-        <div class="text-center max-w-3xl mx-auto mb-20 reveal-on-scroll">
-          <div class="flex items-center justify-center gap-2 mb-4">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-            <span class="text-xs font-semibold uppercase tracking-widest text-white/80">
-              Nuestras Marcas
-            </span>
-          </div>
-          <h2 class="lg:text-5xl text-4xl text-white tracking-tight font-display mb-6">
-            Especialización por Sector
-          </h2>
-          <p class="text-slate-200 text-lg">
-            Desarrollamos marcas diferenciadas para cumplir con los requisitos
-            específicos de cada industria y del hogar peruano.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Salina Brand -->
-          <div class="reveal-on-scroll delay-100 group lg:p-14 hover:bg-white/10 transition-all duration-500 flex flex-col text-center bg-white/5 border-white/10 border rounded-5xl pt-10 pr-10 pb-10 pl-10 relative backdrop-blur-sm items-center hover:border-brand-accent/20">
-            <div class="flex group-hover:scale-110 transition-transform duration-500 w-32 h-24 mb-6 items-center justify-center">
-              <h3 class="w-full h-full flex items-center justify-center">
-                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0a324a04-7f94-48d4-bbe2-3235f4889d65_800w.png" alt="Salina - Marca de Sal Industrial" class="w-full h-full object-contain" loading="lazy">
-              </h3>
-            </div>
-            <p class="text-slate-200 mb-8 leading-relaxed">
-              La marca más reconocida del consorcio. Línea Seca con doble secado industrial para 
-              máxima pureza. Ideal para procesos químicos exigentes, textiles, curtiembre y tratamiento 
-              de aguas. Disponible con y sin yodo según aplicación.
-            </p>
-            <div class="mt-auto">
-              <a href="#contacto" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-accent hover:text-white transition-colors">
-                Consultar Industrial
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Costeñita Brand -->
-          <div class="reveal-on-scroll delay-200 group relative bg-white/5 backdrop-blur-sm rounded-5xl p-10 lg:p-14 border border-white/10 hover:bg-white/10 transition-all duration-500 flex flex-col items-center text-center hover:border-brand-accent/20">
-            <div class="w-32 h-24 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-              <h3 class="w-full h-full flex items-center justify-center">
-                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/89fb20f9-e773-4dbb-8869-23db60811052_1600w.png" alt="Costeñita - Sal de mesa y cocina" class="w-full h-full object-contain" loading="lazy">
-              </h3>
-            </div>
-            <p class="text-slate-200 mb-8 leading-relaxed">
-              La marca estándar de confianza en los hogares norteños. Línea Húmeda con proceso 
-              de molido y secado único que preserva minerales naturales. Sal de mesa yodada y fluorada 
-              con balance ideal para la salud familiar.
-            </p>
-            <div class="mt-auto">
-              <a href="#contacto" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-gold hover:text-white transition-colors">
-                Ver Distribuidores
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
