@@ -403,7 +403,7 @@
 
         <!-- Call to Action -->
         <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto relative z-30 reveal-on-scroll delay-500">
-          <a href="https://wa.me/51961447740?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="group isolate inline-flex cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_8px_rgba(14,165,233,0.35)] rounded-full relative shadow-[0_8px_40px_rgba(14,165,233,0.2)] w-full sm:w-auto flex items-center justify-center" style="--spread: 90deg; --shimmer-color: rgba(0,0,0,0.1); --radius: 9999px; --speed: 3s; --cut: 1px; --bg: #ffffff;" aria-label="Cotizar por WhatsApp">
+          <button id="openQuoteModal" class="group isolate inline-flex cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_8px_rgba(14,165,233,0.35)] rounded-full relative shadow-[0_8px_40px_rgba(14,165,233,0.2)] w-full sm:w-auto flex items-center justify-center" style="--spread: 90deg; --shimmer-color: rgba(0,0,0,0.1); --radius: 9999px; --speed: 3s; --cut: 1px; --bg: #ffffff;" aria-label="Cotizar por WhatsApp">
             <div class="absolute inset-0 overflow-hidden rounded-full">
               <div class="absolute inset-[-200%] w-[400%] h-[400%] [animation:rotate-gradient_var(--speed)_linear_infinite]">
                 <div class="absolute inset-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))]"></div>
@@ -429,7 +429,7 @@
                 }
               </style>
             </div>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -1076,6 +1076,82 @@
       </div>
     </footer>
 
+    <!-- WhatsApp Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
+      <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl transform transition-all scale-95 opacity-0" id="modalContent">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-brand-teal to-brand-dark text-white p-6 rounded-t-3xl relative overflow-hidden">
+          <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+          <button id="closeModal" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+          <div class="relative z-10">
+            <h3 class="text-2xl font-display font-semibold mb-2">Cotización Personalizada</h3>
+            <p class="text-white/90 text-sm">Completa estos datos para una atención más rápida</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="quoteForm" class="p-6 space-y-4">
+          <!-- Nombre de Empresa -->
+          <div class="space-y-2">
+            <label for="companyName" class="text-sm font-medium text-brand-dark">Nombre de tu empresa</label>
+            <input type="text" id="companyName" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all" placeholder="Ej: Textiles del Norte S.A.C.">
+          </div>
+
+          <!-- Tipo de Producto -->
+          <div class="space-y-2">
+            <label for="productType" class="text-sm font-medium text-brand-dark">¿Qué tipo de sal necesitas?</label>
+            <select id="productType" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all bg-white appearance-none cursor-pointer">
+              <option value="">Selecciona una opción</option>
+              <option value="Sal Industrial (Salina)">Sal Industrial (Salina) - Línea Seca Premium</option>
+              <option value="Sal de Consumo (Costeñita)">Sal de Consumo (Costeñita) - Línea Húmeda</option>
+              <option value="Ambos productos">Ambos productos</option>
+            </select>
+          </div>
+
+          <!-- Aplicación -->
+          <div class="space-y-2">
+            <label for="application" class="text-sm font-medium text-brand-dark">¿Para qué la utilizarás?</label>
+            <select id="application" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all bg-white appearance-none cursor-pointer">
+              <option value="">Selecciona una opción</option>
+              <option value="Uso Textil">Uso Textil</option>
+              <option value="Curtiembre">Curtiembre</option>
+              <option value="Tratamiento de Aguas">Tratamiento de Aguas</option>
+              <option value="Ganadería">Ganadería</option>
+              <option value="Procesos Químicos">Procesos Químicos</option>
+              <option value="Consumo Humano (Distribución)">Consumo Humano (Distribución)</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <!-- Volumen -->
+          <div class="space-y-2">
+            <label for="volume" class="text-sm font-medium text-brand-dark">Volumen aproximado mensual</label>
+            <select id="volume" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all bg-white appearance-none cursor-pointer">
+              <option value="">Selecciona un rango</option>
+              <option value="1-5 Toneladas">1 - 5 Toneladas</option>
+              <option value="5-15 Toneladas">5 - 15 Toneladas</option>
+              <option value="15-30 Toneladas">15 - 30 Toneladas</option>
+              <option value="Más de 30 Toneladas">Más de 30 Toneladas</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full bg-brand-teal hover:bg-brand-dark text-white font-semibold py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl mt-6">
+            <span>Enviar a WhatsApp</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send">
+              <path d="m22 2-7 20-4-9-9-4Z"></path>
+              <path d="M22 2 11 13"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
     <script>
       // Init Icons
       lucide.createIcons();
@@ -1119,6 +1195,84 @@
       // Select all elements with the 'reveal-on-scroll' class
       const elementsToAnimate = document.querySelectorAll('.reveal-on-scroll');
       elementsToAnimate.forEach(el => observer.observe(el));
+
+      // WhatsApp Quote Modal Logic
+      const openModalBtn = document.getElementById('openQuoteModal');
+      const closeModalBtn = document.getElementById('closeModal');
+      const modal = document.getElementById('quoteModal');
+      const modalContent = document.getElementById('modalContent');
+      const quoteForm = document.getElementById('quoteForm');
+
+      // Open modal
+      openModalBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+          modalContent.classList.remove('scale-95', 'opacity-0');
+          modalContent.classList.add('scale-100', 'opacity-100');
+        }, 10);
+      });
+
+      // Close modal
+      const closeModal = () => {
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }, 300);
+      };
+
+      closeModalBtn.addEventListener('click', closeModal);
+      
+      // Close on outside click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Handle form submission
+      quoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const companyName = document.getElementById('companyName').value;
+        const productType = document.getElementById('productType').value;
+        const application = document.getElementById('application').value;
+        const volume = document.getElementById('volume').value;
+
+        // Generate WhatsApp message
+        const message = `Hola, soy de *${companyName}*.
+
+Estoy interesado en cotizar:
+📦 Producto: ${productType}
+🏭 Aplicación: ${application}
+📊 Volumen aproximado: ${volume}
+
+¿Podrían enviarme información y precios?
+
+Gracias.`;
+
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Open WhatsApp
+        window.open(`https://wa.me/51961447740?text=${encodedMessage}`, '_blank');
+        
+        // Close modal and reset form
+        closeModal();
+        setTimeout(() => {
+          quoteForm.reset();
+        }, 300);
+      });
     </script>
   
 </body></html>
