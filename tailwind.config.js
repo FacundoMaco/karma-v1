@@ -4,10 +4,10 @@ module.exports = {
     extend: {
       colors: { brand: { teal: '#155e75', dark: '#083344', light: '#f8fafc', accent: '#0ea5e9', gold: '#f59e0b' } },
       fontFamily: {
-        serif: ['"Instrument Serif"', 'serif'],
+        serif: ['"Newsreader"', 'serif'],
         sans: ['"Inter"', 'sans-serif'],
         display: ['"Inter"', 'sans-serif'],
-        mono: ['"Space Grotesk"', 'sans-serif'],
+        mono: ['"Inter"', 'sans-serif'],
         quote: ['"Newsreader"', 'serif'],
       },
       spacing: { '13': '3.25rem', '15': '3.75rem' },

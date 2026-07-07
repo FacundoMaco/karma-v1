@@ -173,10 +173,9 @@
     </script>
 
     <!-- Preconnect to CDNs for faster resource loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-var-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/newsreader-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/newsreader-italic-latin.woff2" crossorigin>
 
     <!-- Tailwind CSS (compilado, antes CDN runtime) -->
     <link rel="stylesheet" href="assets/tw.css">
@@ -256,10 +255,6 @@
     </style>
   </head>
   <body class="antialiased selection:bg-brand-teal selection:text-white text-slate-600 bg-brand-light">
-    <!-- Highly Optimized Semantic H1 for SEO Crawlers (Hidden visually but accessible) -->
-    <h1 class="sr-only">
-      Consorcio Kar &amp; Ma: Fábrica de Sal Industrial y Sal de Mesa en Lambayeque, Perú
-    </h1>
 
     <!-- Fixed Background -->
     <div class="fixed top-0 w-full h-screen -z-10 bg-cover bg-center" style="background-image: url('/assets/img/logo-karma.webp'); mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)" data-alpha-mask="80" role="img" aria-label="Fondo de planta de sal"></div>
@@ -350,14 +345,15 @@
         </div>
 
         <!-- Institutional Subtitle with keyword density -->
-        <h2 class="leading-snug md:text-4xl text-2xl font-light text-slate-200 tracking-tight font-quote max-w-4xl mb-12 drop-shadow-lg reveal-on-scroll delay-200">
+        <h1 class="leading-snug md:text-4xl text-2xl font-light text-slate-200 tracking-tight font-quote max-w-4xl mb-12 drop-shadow-lg reveal-on-scroll delay-200">
+          <span class="sr-only">Consorcio Kar &amp; Ma: Fábrica de Sal Industrial y Sal de Mesa en Lambayeque, Perú. </span>
           Única empresa del norte con
           <strong class="font-medium italic text-white font-serif">
             pozas cristalizadoras propias
           </strong>.
           <br class="hidden md:block">
           Control total para <span class="text-white">uso industrial</span> y <span class="text-white">consumo masivo</span>.
-        </h2>
+        </h1>
 
         <!-- Certifications (Trust Signals for SEO) -->
         <div class="flex flex-wrap opacity-90 mb-8 justify-center reveal-on-scroll delay-300">
